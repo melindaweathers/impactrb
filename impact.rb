@@ -90,6 +90,7 @@ helpers do
   end
   def relative_pathname(path)
     @asset_root ||= Pathname(File.dirname(__FILE__)).realpath
-    path.relative_path_from(@asset_root).cleanpath.to_s
+    # path.relative_path_from(@asset_root).cleanpath.to_s
+    path.realpath.relative_path_from(@asset_root).cleanpath.to_s
   end
 end
